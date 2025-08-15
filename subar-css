@@ -1,0 +1,287 @@
+/* ### 頁尾社群 icon 樣式區塊（含 RWD 響應） ### */
+
+/* 社群 icon 外層容器設定 */
+.footer-social-icons {
+  display: flex;                 /* 橫向排列 */
+  justify-content: flex-start;  /* icon 靠左 */
+  gap: 5px;                      /* icon 間距為 5px */
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  line-height: 1 !important;
+}
+
+/* 清除所有內部元素的預設 margin 和 padding */
+.footer-social-icons * {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* 每個 icon 的連結 */
+.footer-social-icons a {
+  text-decoration: none;
+}
+
+/* icon 主體樣式：黑色 icon＋灰色圓形背景 */
+.footer-social-icons i {
+  background: #eee;         /* 背景灰色 */
+  color: #000;              /* icon 顏色黑色 */
+  border-radius: 50%;       /* 圓形 */
+  width: 35px;              /* icon 寬度 */
+  height: 35px;             /* icon 高度 */
+  font-size: 20px;          /* icon 大小 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+/* 滑鼠移過時 icon 的樣式 */
+.footer-social-icons i:hover {
+  background: #444;         /* 背景變深灰 */
+  color: #fff;              /* icon 顏色變白 */
+}
+
+/* RWD 響應式：螢幕寬度 ≤ 768px 時 icon 縮小 */
+@media (max-width: 768px) {
+  .footer-social-icons i {
+    width: 30px;            /* 縮小尺寸 */
+    height: 30px;
+    font-size: 18px;
+  }
+}
+
+/* 更小尺寸：螢幕寬度 ≤ 400px 時再縮小一點 */
+@media (max-width: 400px) {
+  .footer-social-icons i {
+    width: 26px;            /* 更小尺寸 */
+    height: 26px;
+    font-size: 16px;
+  }
+}
+
+/*** 將購物車數量顯示為圓形標籤 ***/
+.et_pb_menu__cart-count {
+  background-color: #333;        /* 背景顏色設為深灰色 */
+  border-radius: 50%;            /* 圓角設為 50%，形成圓形 */
+  min-width: 18px;               /* 最小寬度為 18px */
+  height: 18px;                  /* 高度為 18px */
+  display: flex;                 /* 使用 Flex 排版對齊內容 */
+  align-items: center;          /* 垂直置中數字 */
+  justify-content: center;      /* 水平置中數字 */
+  margin-left: -24px;           /* 向左移動以靠近購物車圖示 */
+  margin-bottom: -17px;         /* 向下移動以微調位置 */
+  z-index: 9;                   /* 提高圖層順序，確保不被遮住 */
+}
+
+/* 桌機版：在購物車圖示左邊加入間距 */
+@media (min-width: 981px) {
+  .et_pb_menu__icon.et_pb_menu__cart-button {
+    margin-left: 22px;          /* 向左加 22px 空間 */
+  }
+}
+
+/* 將預設的購物車圖示替換為袋子圖示 */
+.et_pb_menu__cart-button:after {
+  content: "\e013" !important;  /* 使用袋子 icon（Unicode 代碼） */
+}
+
+/* === 數量按鈕樣式（加減） === */
+/* 移除數字欄位上下箭頭（Chrome／Firefox） */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+/* 整體數量區容器設為橫向排列 */
+.quantity {
+           display: flex !important; 
+}
+
+/* 數量輸入欄上下內距 */
+.quantity .input-text  {
+    padding-top: 10px !important;
+        padding-bottom: 10px !important;
+}
+
+/* 加減按鈕外觀 */
+.woocommerce .quantity .minus,
+.woocommerce-page .quantity .minus,
+.woocommerce .quantity .plus,
+.woocommerce-page .quantity .plus  {
+    height: auto !important;
+    background-color: #f2f2f2 !important;
+    font-size: 26px !important;
+    width: 40px !important;
+          color: #000 !important;
+          border: #e2e2e2 1px solid !important;
+}
+
+/* 微調減號按鈕位置 */
+.woocommerce .quantity .minus,
+.woocommerce-page .quantity .minus {
+    padding-bottom: 7px !important;    
+}
+
+/* === WooCommerce 我的帳號 - 導航樣式自定義 === */
+
+/* 移除帳號選單的項目符號與外距 */
+nav.woocommerce-MyAccount-navigation ul {
+    list-style: none;      /* 移除項目前的圓點符號 */
+    padding: 0;            /* 清除預設內距 */
+}
+
+/* 基本帳號選單樣式設定 */
+nav.woocommerce-MyAccount-navigation a {
+    display: block;             /* 每個選項占一整行 */
+    background: #f3f3f3;        /* 背景淺灰色 */
+    padding: 0.5em 1em;         /* 上下內距0.5em，左右1em */
+    color: #000;                /* 文字顏色為黑色 */
+    font-weight: 600;          /* 字體加粗 */
+    text-transform: uppercase; /* 英文字母全部轉大寫 */
+    font-size: .9em;           /* 字體稍微縮小 */
+    letter-spacing: 0.02em;    /* 字距稍微加寬一點 */
+    margin-bottom: 2px;        /* 每個選項下方留一點空隙 */
+    transition: all .3s;       /* 滑鼠滑過時有滑順過渡效果 */
+}
+
+/* 滑鼠移到帳號選單時的樣式 */
+nav.woocommerce-MyAccount-navigation a:hover {
+    background: #b12832; /* 背景變成紅色系（可改為你要的品牌色） */
+    color: #fff;         /* 文字變白色 */
+}
+
+/* 被選取（正在瀏覽中）的選單項目樣式 */
+nav.woocommerce-MyAccount-navigation li.is-active a {
+    color: #fff;              /* 選取中的項目文字變白色 */
+    background: #3c3c3c;      /* 背景變成深灰色（突出目前位置） */
+}
+
+/* === WooCommerce 我的帳號 - 導覽選單加上 Font Awesome 圖示圖標 === */
+
+/* 所有導航選單項目前加入圖示（預設為使用者圖示） */
+nav.woocommerce-MyAccount-navigation a::before {
+    display: inline-block;              
+    font-family: "Font Awesome 6 Free", "Font Awesome 5 Free", "Font Awesome 4.7";  /* 同時支援 v6 和 v5 */
+    font-weight: 900;                   /* 實心圖示（solid） */
+    content: "\f007";                   /* 預設 icon：使用者 user */
+    margin-right: 10px;                 /* icon 與文字間距 */
+}
+
+/* 儀表板（dashboard）選單項目的圖示換成購物車 */
+li.woocommerce-MyAccount-navigation-link--dashboard a::before {
+    content: '\f2bd';           /* 改成circle-user購物車圖示 */
+}
+
+/* 訂單（Orders）選單項目的圖示換成購物車 */
+li.woocommerce-MyAccount-navigation-link--orders a::before {
+    content: '\f07a';           /* 改成購物車圖示 */
+}
+
+/* 下載次數（Downloads）選單項目的圖示換成下載圖案 */
+li.woocommerce-MyAccount-navigation-link--downloads a::before {
+    content: '\f019';           /* 改成下載圖示 */
+}
+
+/* 地址（Address）選單項目的圖示換成下載圖案 */
+li.woocommerce-MyAccount-navigation-link--edit-address a::before {
+    content: '\f015';           /* 改成房子圖示 */
+}
+
+/* 帳戶詳細資料（edit-account）選單項目的圖示換成下載圖案 */
+li.woocommerce-MyAccount-navigation-link--edit-account a::before {
+    content: '\f4fc';           /* 改成user-check圖示 */
+}
+
+/* 登出（logout）選單項目的圖示換成下載圖案 */
+li.woocommerce-MyAccount-navigation-link--customer-logout a::before {
+    content: '\f08b';           /* 改成登出圖示 */
+}
+
+/* === WooCommerce 成功訊息與通知樣式自訂（套用於 #dl-account 區塊） === */
+
+/* 自訂資訊訊息（如：通知、成功訊息）外觀樣式 */
+#dl-account .woocommerce-info,
+#dl-account .woocommerce-message {
+    background: #fff !important;       /* 背景設為白色 */
+    color: #333 !important;            /* 文字顏色為深灰色（高對比） */
+    border: 2px #8300e9 solid;         /* 邊框為 2px 紫色實線 */
+}
+
+/* 訊息區塊內的超連結（排除按鈕類）樣式設定 */
+#dl-account .woocommerce-info a:not(.button),
+#dl-account .woocommerce-message a:not(.button) {
+    color: #8300e9;                    /* 超連結字體顏色為紫色 */
+    text-decoration: underline;       /* 加上底線，提高辨識度 */
+}
+
+/* === WooCommerce 我的帳戶 - 訂單表格樣式 === */
+
+/* 訂單表格與其表頭／表格欄位的邊框加粗 */
+#dl-account table.shop_table,
+#dl-account table.shop_table td,
+#dl-account table.shop_table th {
+    border-width: 2px;  /* 邊框厚度設為 2px */
+}
+
+/* 表格欄位的內距設定 */
+#dl-account table.shop_table td,
+#dl-account table.shop_table th {
+    padding: 10px 15px; /* 上下 10px，左右 15px 內距 */
+}
+
+/* 訂單列表（如最近訂單區塊）的文字大小設定 */
+#dl-account table.my_account_orders {
+    font-size: 1em; /* 字體大小維持正常比例（可改 0.95em 調整整體視覺） */
+}
+
+/* === WooCommerce 我的帳戶 - 訂單詳細內容區塊 === */
+
+/* 訂單詳細區塊與其他內容區拉出一點距離 */
+section.woocommerce-order-details {
+    margin-top: 40px; /* 上方留白 40px */
+}
+
+/* 顧客地址區塊（像是帳單地址、收件地址）的樣式 */
+#dl-account .woocommerce-customer-details address {
+    border-width: 2px; /* 外框厚度 */
+    padding: 30px;     /* 內距 30px，讓內文不會緊貼邊框 */
+}
+
+/* === WooCommerce 我的帳戶 - 表單欄位樣式 === */
+
+/* 所有帳戶頁面中的 label 標籤（欄位名稱） */
+#dl-account label {
+    font-weight: 600; /* 粗體（更強提示作用） */
+    color: #333;      /* 深灰字（不刺眼） */
+}
+
+/* 所有帳戶頁面的輸入框樣式 */
+#dl-account input {
+    margin-bottom: 1em;              /* 每個欄位底部留空間 */
+    background: transparent;         /* 背景透明（可搭配白底區塊使用） */
+    border: 2px #ccc solid;          /* 邊框 2px 淺灰色 */
+    font-weight: 500;                /* 字體稍粗一點，更清楚 */
+    border-radius: 5px;              /* 圓角邊框 */
+}
+
+/* 使用者點選輸入框時的樣式（聚焦效果） */
+#dl-account input:focus {
+    border-color: mediumpurple; /* 聚焦時邊框變紫色，提示可輸入 */
+}
+
+/* 儲存帳戶資料按鈕（如修改密碼、變更名稱的表單送出按鈕） */
+#dl-account form.edit-account button.button {
+    padding: 1em 2em !important; /* 增加按鈕的內距：上下 1em，左右 2em */
+}
+
+/* === WooCommerce 我的帳戶 - 取消斜體文字 === */
+
+/* 讓  標籤的文字不再斜體（Woo 預設會斜體） */
+#dl-account em {
+    font-style: normal;
+}
