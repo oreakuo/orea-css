@@ -1,1 +1,34 @@
+/* === WooCommerce 成功訊息與通知樣式自訂（套用於 #dl-account 區塊） === */
+
+/* 自訂資訊訊息（如：通知、成功訊息）外觀樣式 */
+#dl-account .woocommerce-info,
+#dl-account .woocommerce-message,
+#dl-account .woocommerce-error,
+#dl-account .woocommerce-notice,
+#dl-account .woocommerce-notice--success,
+#dl-account .woocommerce-notice--info,
+#dl-account .woocommerce-notice--error {
+    background: #fff !important;       /* 背景設為白色 */
+    color: #333 !important;            /* 文字顏色為深灰色（高對比） */
+    border: 2px #8300e9 solid;         /* 邊框為 2px 紫色實線 */
+}
+
+/* 訊息區塊內的超連結（排除按鈕類）樣式設定 */
+#dl-account .woocommerce-info a:not(.button),
+#dl-account .woocommerce-message a:not(.button),
+#dl-account .woocommerce-error a:not(.button),
+#dl-account .woocommerce-notice a:not(.button),
+#dl-account .woocommerce-notice--success a:not(.button),
+#dl-account .woocommerce-notice--info a:not(.button),
+#dl-account .woocommerce-notice--error a:not(.button) {
+    color: #8300e9;                    /* 超連結字體顏色為紫色 */
+    text-decoration: underline;       /* 加上底線，提高辨識度 */
+}
+
+/* 錯誤訊息內容常用 <ul><li>，需額外確保 li 文字顏色正確 */
+#dl-account .woocommerce-error li {
+  color: var(--dlw-notice-text) !important; /* 深灰色文字 */
+}
+
+
 
